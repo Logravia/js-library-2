@@ -1,6 +1,6 @@
 let myLibrary = [new Book("The Hobbit", "J.R.R. Tolkien", 1937)];
 
-const table = document.querySelector("#book-table");
+let table = document.querySelector("#book-table");
 
 function Book(title, author, pubDate, rating=0, read=false) {
   this.title = title;
@@ -37,6 +37,11 @@ const displayLibrary = () => {
   }
 }
 
+const refreshDisplay = () => {
+  table.replaceChildren();
+  displayLibrary();
+}
+
 const removeBook = id => {
   myLibrary.splice(id,1);
 }
@@ -45,7 +50,10 @@ const newDelBtn = id => {
   btn = document.createElement("button");
   btn.id = id;
   btn.textContent = "DELETE"
-  btn.addEventListener("click",e=>{removeBook(e.currentTarget.id)});
+  btn.addEventListener("click",e=>{
+    removeBook(e.currentTarget.id);
+    refreshDisplay();
+  });
   return btn;
 }
 
