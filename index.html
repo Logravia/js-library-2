@@ -19,13 +19,33 @@
           <td>Published</td>
           <td>Rating</td>
           <td>Read</td>
-          <td>Delete</td>
+          <td>Options</td>
         </tr>
-        </tr>
-      </thead>
       <tbody id="book-table">
       </tbody>
     </table>
 
+    <form method="" id="book-data" action="">
+      <fieldset class="data-fields">
+        <legend>Book Details</legend>
+
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" required="required">
+
+        <label for="author">Author: </label>
+        <input type="text" id="author" name="author" required="required">
+
+        <label for="published">Published in:</label>
+        <input type="text" id="published" name="published">
+
+        <label for="rating">Rating:</label>
+        <input type="number" id="rating" name="rating" value="5">
+
+        <label for="read">Read: </label>
+        <input type="checkbox" id="read" name="read">
+
+        <button type="button" id="save">Save</button>
+      </fieldset>
+    </form>
   </body>
 </html>
